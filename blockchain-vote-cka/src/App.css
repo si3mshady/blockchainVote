@@ -1,4 +1,30 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+body {
+  background: aliceblue;
+}
 .App {
+
+  display: flex;
+  margin-top: 20vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Coda Caption', sans-serif;
+}
+
+h1 {
+  
+  margin:auto;
+  margin-bottom: 5vh;
+}
+
+/* 
+
+ .App {
   text-align: center;
 }
 
@@ -35,4 +61,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+}  */

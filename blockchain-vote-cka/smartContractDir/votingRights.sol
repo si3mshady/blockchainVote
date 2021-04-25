@@ -2,13 +2,15 @@ pragma solidity >=0.4.16;
 
 contract District4 {
     int256 registeredVoters;
+    int256 actualVoters;
     mapping(address => Voter) public votingRegistery;
     mapping(address => uint256) public registeredAddress;
     mapping(address => string) public ipAddressUsed;
     mapping(string => uint256) public votesReceived;
 
     constructor() public {
-        int256 registeredVoters = 0;
+        registeredVoters = 0;
+        actualVoters = 0;
     }
     
 
@@ -45,7 +47,7 @@ contract District4 {
 
     function vote(string memory _ipAddress, string memory _candidateName)
         public
-        returns (bool) {
+        returns (int256) {
         //Verify IP addresss of registered voter has not changed 
         require(
             keccak256(bytes(ipAddressUsed[msg.sender])) ==
@@ -56,8 +58,9 @@ contract District4 {
         votingRegistery[msg.sender].candidateName = _candidateName;
      
         votesReceived[_candidateName] += 1;
+        actualVoters +=1;
 
-        return true;
+        return actualVoters;
     }
 }
 

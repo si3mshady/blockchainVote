@@ -1,0 +1,25 @@
+.register {
+    display: flex;
+    align-items: center !important;
+    flex-direction: column !important;
+    font-family: 'Coda Caption', sans-serif;
+
+} 
+
+.register > p {
+    font-size: 2rem;
+}
+
+.form-group {
+    margin: auto !important;
+}
+
+.register_button > button {
+    display: flex;
+    margin: auto;
+
+}
+
+input::placeholder{
+    text-align: center;
+ }
