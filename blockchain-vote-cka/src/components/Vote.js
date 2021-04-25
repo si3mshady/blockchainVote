@@ -6,10 +6,6 @@ export default function Vote() {
             <Form.Group className="">
   <Form.Row>
 
-
-    {/* <Form.Label column="sm" lg={2}>
-      Driver's Licence
-    </Form.Label> */}
     <Col>
       <Form.Control size="lg" type="text" placeholder="Candidate Name" />
     </Col>
@@ -26,3 +22,6 @@ export default function Vote() {
         </div>
     )
 }
+
+
+//https://docs.alchemyapi.io/alchemy/tutorials/how-to-create-an-nft

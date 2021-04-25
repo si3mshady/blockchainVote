@@ -12,7 +12,14 @@ contract District4 {
         registeredVoters = 0;
         actualVoters = 0;
     }
-    
+
+    function getRegisteredVoters() public returns (int256) {
+        return registeredVoters;
+    }
+
+    function getActualVoters() public returns (int256) {
+        return actualVoters;
+    }
 
     struct Voter {
         address eth_addr;
@@ -26,8 +33,7 @@ contract District4 {
         uint256 _driversLicence,
         string memory _name,
         string memory _ipAddress
-    ) public returns (address) {
-    
+    ) public returns (int256) {
         Voter memory candidate =
             Voter({
                 eth_addr: msg.sender,
@@ -42,13 +48,14 @@ contract District4 {
         registeredVoters += 1;
         ipAddressUsed[msg.sender] = _ipAddress;
 
-        return msg.sender;
+        return registeredVoters;
     }
 
     function vote(string memory _ipAddress, string memory _candidateName)
         public
-        returns (int256) {
-        //Verify IP addresss of registered voter has not changed 
+        returns (int256)
+    {
+        //Verify IP addresss of registered voter has not changed
         require(
             keccak256(bytes(ipAddressUsed[msg.sender])) ==
                 keccak256(bytes(_ipAddress))
@@ -56,9 +63,9 @@ contract District4 {
 
         votingRegistery[msg.sender].ipAddress = _ipAddress;
         votingRegistery[msg.sender].candidateName = _candidateName;
-     
+
         votesReceived[_candidateName] += 1;
-        actualVoters +=1;
+        actualVoters += 1;
 
         return actualVoters;
     }
@@ -67,4 +74,3 @@ contract District4 {
 // https://ethereum.stackexchange.com/questions/43817/structs-mappings-enums-how-to-make-them-work-together
 //https://forum.ethereum.org/discussion/3495/operator-not-compatible-with-types-string-storage-ref-and-string-storage-ref
 //https://ethereum.stackexchange.com/questions/30912/how-to-compare-strings-in-solidity/82739
-//https://docs.alchemyapi.io/alchemy/tutorials/how-to-create-an-nft

@@ -28,7 +28,7 @@ function App() {
          </Route>      
 
          <Route path="/vote">                 
-          <Vote  />
+          <Vote ip={ip} />
          </Route>   
     </Switch>
     </BrowserRouter>
