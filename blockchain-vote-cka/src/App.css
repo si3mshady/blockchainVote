@@ -3,12 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 } */
+
+
+
 body {
   background: aliceblue;
+    text-align: center;
+ 
 }
+
+
 .App {
 
-  display: flex;
+  display: relative;
   margin-top: 20vh;
   align-items: center;
   justify-content: center;
@@ -16,6 +23,20 @@ body {
   font-family: 'Coda Caption', sans-serif;
 }
 
+.App > h1 {
+   align-items: center;
+  justify-content: center;
+
+}
+
+.App__header {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+ 
+  height: 100px;
+
+}
 h1 {
   
   margin:auto;

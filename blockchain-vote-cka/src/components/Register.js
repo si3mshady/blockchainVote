@@ -41,7 +41,8 @@ export default function Register({ip}) {
     
   const registerVoter =  () => {  
     
-  
+    setFullName('')
+    setDriversLicence('')
 
     let ipString = new String(ip)
     let driversLicenceInt = parseInt(driversLicence); 

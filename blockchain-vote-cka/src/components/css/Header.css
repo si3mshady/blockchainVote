@@ -1,0 +1,21 @@
+.header{
+ 
+        display:flex;
+       justify-content: space-between;
+       border-bottom: 1px solid gray;
+}
+
+
+a {
+ /* display: block; */
+padding: 1%;
+ 
+
+}
+
+
+.header__top {
+ 
+ 
+
+}

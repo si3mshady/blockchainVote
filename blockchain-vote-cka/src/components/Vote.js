@@ -12,7 +12,7 @@ export default function Vote({ip}) {
     const [abi, setAbi] = useState('');
     const [web3Instance, setWeb3Instance] = useState();
     const [actualVoters, setActualVoters] = useState();
-    // const [registeredVoters, setRegisteredVoters] = useState();
+  
     const district4_SC =  "0x1a3e43492533a45c7785ce0b9f45297ca8e08718";
 
     useEffect(() => {
@@ -38,6 +38,7 @@ export default function Vote({ip}) {
 
     
       const vote =  () => {   
+        setCandidateName('')
 
         let ipString = new String(ip)       
        let contract_instance =  new web3Instance.eth.Contract(abi,district4_SC)
