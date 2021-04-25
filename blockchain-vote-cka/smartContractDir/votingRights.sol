@@ -10,6 +10,7 @@ contract District4 {
     constructor() public {
         int256 registeredVoters = 0;
     }
+    
 
     struct Voter {
         address eth_addr;
@@ -24,6 +25,7 @@ contract District4 {
         string memory _name,
         string memory _ipAddress
     ) public returns (address) {
+    
         Voter memory candidate =
             Voter({
                 eth_addr: msg.sender,
@@ -43,9 +45,8 @@ contract District4 {
 
     function vote(string memory _ipAddress, string memory _candidateName)
         public
-        returns (bool)
-    {
-        //Verify IP addresss registered to voter has n
+        returns (bool) {
+        //Verify IP addresss of registered voter has not changed 
         require(
             keccak256(bytes(ipAddressUsed[msg.sender])) ==
                 keccak256(bytes(_ipAddress))
@@ -53,7 +54,7 @@ contract District4 {
 
         votingRegistery[msg.sender].ipAddress = _ipAddress;
         votingRegistery[msg.sender].candidateName = _candidateName;
-
+     
         votesReceived[_candidateName] += 1;
 
         return true;
