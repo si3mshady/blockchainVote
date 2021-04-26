@@ -44,11 +44,11 @@ export default function Vote({ip}) {
        let contract_instance =  new web3Instance.eth.Contract(abi,district4_SC)
        contract_instance.methods.vote(ipString, candidateName).send({from: account})
        .then(res => {
-          let response = contract_instance.methods.getActualVoters().call()
+         contract_instance.methods.getActualVoters().call()
         .then(data => {
             console.log( setActualVoters(data) )   
     
-        })       
+        })  
        }      
     
        )    
